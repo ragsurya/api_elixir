@@ -26,4 +26,13 @@ defmodule ApiAddressbook.Repo do
   def get(module, id) do
     Enum.find all(module), fn elem -> elem.id == id end
   end
+
+  def updateUser(module, id) do
+    list = Enum.find all(module), fn elem -> elem.id == id end
+    %{ list | name: list[:name] <> " Updated" , age: list[:age] + 1 }
+  end
+
+  def start_link do
+    { :ok, self() }
+ end
 end

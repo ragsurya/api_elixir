@@ -25,5 +25,6 @@ defmodule ApiAddressbook.Router do
 
     get "/users", UserController, :index
     get "/users/:id", UserController, :show
+    get "/users/:id/update", UserController, :update
   end
 end

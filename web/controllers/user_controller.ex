@@ -10,4 +10,9 @@ defmodule ApiAddressBook.UserController do
     user = Repo.get(ApiAddressBook.User, String.to_integer(id))
     json conn, user
   end
+
+  def update(conn, %{"id" => id}) do
+    user = Repo.updateUser(ApiAddressBook.User, String.to_integer(id))
+    json conn, user
+  end
 end
